@@ -34,12 +34,17 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    // new HTMLWebpackPlugin({
+    //   template: 'index.html',
+    //   minify: {
+    //     removeComments: isProd,
+    //     collapseWhitespace: isProd
+    //   }
+    // }),
     new HTMLWebpackPlugin({
-      template: 'index.html',
-      minify: {
-        removeComments: isProd,
-        collapseWhitespace: isProd
-      }
+      template: 'pug/index.pug',
+      filename: 'index.html',
+      inject: true
     }),
     new CopyPlugin({
       patterns: [
@@ -96,6 +101,12 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env']
           }
+        }
+      },
+      {
+        test: /\.pug$/,
+        use: {
+          loader: 'pug-loader',
         }
       }
     ]
