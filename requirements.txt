@@ -1,4 +1,4 @@
-npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env css-loader sass-loader node-sass mini-css-extract-plugin autoprefixer postcss-loader clean-webpack-plugin copy-webpack-plugin html-webpack-plugin cross-env
+npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env css-loader sass-loader node-sass mini-css-extract-plugin autoprefixer postcss-loader clean-webpack-plugin copy-webpack-plugin html-webpack-plugin cross-env pug pug-loader
 
 1) webpack
 2) webpack-cli
@@ -23,3 +23,6 @@ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/
 17) html-webpack-plugin
 
 18) cross-env
+
+19) pug
+20) pug-loader
