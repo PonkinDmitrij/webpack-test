@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -56,7 +57,19 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: `css/${filename('css')}`
-    })
+    }),
+    new BrowserSyncPlugin(
+      {
+        open: false,
+        notify: false,
+        host: 'localhost',
+        port: 3100,
+        proxy: 'http://localhost:3000/'
+      },
+      {
+        reload: false
+      }
+    )
   ],
   module: {
     rules: [
